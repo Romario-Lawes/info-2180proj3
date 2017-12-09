@@ -1,28 +1,29 @@
-CREATE DATABASE cheapomail;
+CREATE DATABASE IF NOT EXISTS cheapomail;
 USE cheapomail;
 
 CREATE TABLE Users(
-  id INTEGER,
-  firstname TEXT,
-  lastname TEXT,
-  username TEXT,
-  password TEXT
+  id INT AUTO_INCREMENT,
+  firstname VARCHAR(32),
+  lastname VARCHAR(32),
+  username VARCHAR(32),
+  password VARCHAR(64),
+  PRIMARY KEY(id)
 );
 
 CREATE TABLE Messages(
-  id INTEGER,
-  recipient_ids INTEGER,
-  sender_id INTEGER,
+  id INT AUTO_INCREMENT,
+  recipient_ids TEXT,
+  sender_id INT,
   subject TEXT,
   body TEXT,
-  date_sent DATE
+  date_sent TEXT,
+  PRIMARY KEY(id)
 );
 
 CREATE TABLE Messages_read(
-  id INTEGER,
-  message_id INTEGER,
-  reader_id INTEGER,
-  date_read DATE
+  id INT AUTO_INCREMENT,
+  message_id INT,
+  reader_id INT,
+  date_read TEXT,
+  PRIMARY KEY(id)
 );
-
-INSERT INTO Users (id, firstname, lastname, username, password) VALUES (1, "Mr", "Admin", "admin", "password123");

@@ -1,5 +1,7 @@
+"use strict";
+
 window.onload = function () {
-  document.getElementById('submit').addEventListener("click", validateForm);
+  // document.getElementById('submit').addEventListener("click", validateForm);
 
   function validateForm(e) {
     let form = document.getElementsByTagName("form")[0];
